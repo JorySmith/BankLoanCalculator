@@ -31,21 +31,20 @@ function calculateLoanDetails(loanAmount, totalPayments, intRate) {
 
     // Monthly mortgage payment formula: M = P [ i(1 + i)^n ] / [ (1 + i)^n – 1]    
     // M = monthly payment; P = principal loan amount; i = monthly interest rate; n = number of months required to repay the loan
+
     // Calculate i = monthly interest rate
     let monthlyIntRate = (intRate/12);
 
-    //  M = monthly payment; P = parsedLoanAmount; i = monthlyIntRate; n = totalPayments
+    // Updated formula: M = monthly payment; P = parsedLoanAmount; i = monthlyIntRate; n = totalPayments
 
-    // Need to calculate each months payment for as long as totalPayments requires
-    // Need to calculate how much each payment reduces the principal, and how much goes towards interest
-    // Need to track total interest paid after each payment
-    // Need to track loan balance new total after each payment
-
-    
-
-
-    // Calculate amortizationTable
-    // Calculate total principal, interest, and cost
+    // Create amortization table, assign to amortizationTable
+    // Calculate each month's payment for as long as totalPayments requires
+    // For each monthly payment:
+    // Calculate how much of each payment reduces the principal only
+    // Calculate how much of each payment goes towards interest
+    // Track and update total interest paid/totalInterest after each payment
+    // Track and update new loan balance/new parsedLoanAmount after each payment
+    // Calculate and update total cost/totalCost (totalInterest + parsedLoanAmount)       
 
     
 

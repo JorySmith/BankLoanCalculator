@@ -1,0 +1,87 @@
+:root {
+    --primary-color: #1d5888;
+    --secondary-color: #ff993b;
+    --dark-color: #292929;
+    --white-color: #ffffff;
+}
+
+body {
+    color: var(--dark-color);
+}
+
+nav {
+    background-color: var(--dark-color);
+}
+
+footer {
+    background-color: var(--dark-color);
+    padding: 0 1rem;
+}
+
+a {
+    color: var(--white-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color);
+}
+
+main>.container {
+    padding: 60px 15px 0;
+    margin-bottom: 5rem;
+}
+
+.brandFont {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sticky-footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.lead {
+    color: black;
+}
+
+.bsIcon {
+    color: purple;
+}
+
+.jsIcon {
+    color: rgb(233, 233, 14);
+}
+
+.htmlIcon {
+    color: orangered;
+}
+
+.cssIcon {
+    color: rgb(0, 140, 187);
+}
+
+.checklist>li i {
+    color: var(--secondary-color);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.code-title {
+    margin-top: 2rem;
+}

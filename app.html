@@ -64,22 +64,23 @@
             <!-- App Name -->
             <h1 class="pb-1">Bank Loan Calculator</h1>
             <!-- First Row: User Inputs, Monthly Payment Results -->
-            <div class="row row-cols-1 row-cols-md-2 mb-2">                
+            <div class="row row-cols-1 row-cols-md-2 mb-2">
                 <!-- Loan Info Form Inputs -->
                 <div class="col">
                     <form class="row g-2 p-3 formBgc">
-                        <label for="loanAmount" class="fw-bold">Loan Amount</label>
+                        <label for="loanAmount" class="fw-bold">Loan Amount <span class="fw-normal">(Mortgage Principal)</span></label>
                         <input id="loanAmount" name="loanAmount" type="number" class="form-control" value="15000">
 
-                        <label for="payments" class="fw-bold">Payments</label>
+                        <label for="payments" class="fw-bold">Payments <span class="fw-normal">(Whole numbers only)</span></label>
                         <input id="payments" name="payments" type="number" class="form-control" value="60">
 
-                        <label for="intRate" class="fw-bold">Interest Rate</label>
+                        <label for="intRate" class="fw-bold">Annual Interest Rate</label>
                         <input id="intRate" name="intRate" type="number" class="form-control" value="2.75">
 
                         <!-- Calculate Button -->
                         <div class="d-flex justify-content-end">
-                            <button id="calculateBtn" class="btn border-2 formBtn formTxt fw-bold mt-1" type="submit">Calculate</button>
+                            <button id="calculateBtn" class="btn border-2 formBtn formTxt fw-bold mt-1"
+                                type="button">Calculate</button>
                         </div>
                     </form>
                 </div>
@@ -87,16 +88,16 @@
                 <div class="col d-flex flex-column align-items-end">
                     <p><em>Your Monthly Payments</em></p>
                     <p id="monthlyPayments" class="monthlyPayments fw-bold">$269.53</p>
-                    <div class="col-12 d-flex justify-content-between">
-                        <div class="col-6">
-                            <p class="mb-1">Total Principal:</p>
-                            <p class="mb-1">Total Interest:</p>
-                            <p class="mb-1">Total Cost:</p>
+                    <div class="col-12 d-flex">
+                        <div class="col-6 d-flex flex-column align-items-end">
+                            <p class="mb-1 fw-bold">Total Principal:</p>
+                            <p class="mb-1 fw-bold border-bottom border-2">Total Interest:</p>
+                            <p class="mb-1 fw-bold">Total Cost:</p>
                         </div>
                         <!-- Total Principal/Interest/Cost Info -->
                         <div class="col-6 d-flex flex-column align-items-end">
                             <p id="totalPrincipal" class="mb-1">$15,000.00</p>
-                            <p id="totalInterest" class="mb-1">$1,171.82</p>
+                            <p id="totalInterest" class="mb-1 border-bottom border-2">$1,171.82</p>
                             <p id="totalCost" class="fw-bold mb-1">$16,171.82</p>
                         </div>
                     </div>
@@ -153,7 +154,7 @@
     </script>
     <script src="js/site.js"></script>
     <script>
-        document.getElementById("calculateBtn").addEventListener("click", userInputs)
+        document.getElementById("calculateBtn").addEventListener("click", userInputs);
     </script>
 
 </body>

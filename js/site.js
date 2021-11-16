@@ -42,17 +42,17 @@ function calculateLoanDetails(loanAmount, totalPayments, intRate) {
     // monthlyPayment = parsedLoanAmount * ((monthlyIntRate(1 + monthlyIntRate)) ** totalPayments) / (((1 + monthlyIntRate) ** totalPayments) – 1)
     
     // Calculate monthly payment        
-    monthlyPayment = calculateMonthlyPayment(parsedLoanAmount, monthlyIntRate, totalPayments);
+    monthlyPaymentDetails = calculateMonthlyPayment(parsedLoanAmount, monthlyIntRate, totalPayments);
 
     // Calculate totalInterest and totalCost
-    totalCost = (monthlyPayment.totalMonthlyPayment * totalPayments);
+    totalCost = (monthlyPaymentDetails.totalMonthlyPayment * totalPayments);
     totalInterest = (totalCost - parsedLoanAmount);
+    
 
-    // Create amortization table for as long as totalPayments requires 
-    let    
+    // Create amortization table for as long as totalPayments requires        
     for (let payment = 1; payment <= totalPayments; payment++) {
         
-        calculateMonthlyPayment(parsedLoanAmount, monthlyIntRate, totalPayments)
+        
         // Calculate how much of each payment reduces the principal only
         // Calculate how much of each payment goes towards interest
         // Track and update total interest paid after each payment
@@ -65,23 +65,27 @@ function calculateLoanDetails(loanAmount, totalPayments, intRate) {
 
 // Calculate monthly payment
 // Return total monthly payment, monthly interest payment, and monthly principal payment
-function calculateMonthlyPayment(parsedLoanAmount, monthlyIntRate, totalPayments) {
+function calculateMonthlyPayment(loanAmount, monthlyIntRate, totalPayments) {
+    // Parse floats for inputs
+    let parsedLoanAmount = parseFloat(loanAmount);
+    let parsedMonthlyIntRate = parseFloat(monthlyIntRate);
+    let parsedTotalPayments = parseFloat(totalPayments);
+
     // Declare return object
-    let returnObj = {
-        totalMonthlyPayment: 0,
-        monthlyInterestPayment: 0,
-        monthlyPrincipalPayment: 0,
-    }    
+    let returnObj = {}    
+
     // Step through monthly mortgage payment formula
-    let resultA = monthlyIntRate * ((1 + monthlyIntRate) ** totalPayments);
-    let resultB = (((1 + monthlyIntRate) ** totalPayments) - 1);
+    let resultA = (parsedMonthlyIntRate * ((1 + parsedMonthlyIntRate) ** parsedTotalPayments));
+    let resultB = (((1 + parsedMonthlyIntRate) ** parsedTotalPayments) - 1);
     let resultC = (resultA/resultB);
-    returnObj.totalMonthlyPayment = (parsedLoanAmount * resultC).toFixed(2);
+    returnObj.totalMonthlyPayment = parseFloat((parsedLoanAmount * resultC).toFixed(2));
 
     // Monthly interest payment formula: loan balance * monthlyIntRate
-    returnObj.monthlyInterestPayment = (parsedLoanAmount * monthlyIntRate).toFixed(2);
+    returnObj.monthlyInterestPayment = parseFloat((parsedLoanAmount * parsedMonthlyIntRate).toFixed(2));
     // Monthly principal payment formula: monthly payment - monthly interest payment
-    returnObj.monthlyPrincipalPayment = (returnObj.totalMonthlyPayment - returnObj.monthlyInterestPayment).toFixed(2);
+    returnObj.monthlyPrincipalPayment = parseFloat((returnObj.totalMonthlyPayment - returnObj.monthlyInterestPayment).toFixed(2));
+
+    return returnObj;
 }
 
 // Display function

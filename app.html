@@ -65,7 +65,7 @@
             <h1 class="pb-1">Bank Loan Calculator</h1>
             <!-- First Row: User Inputs, Monthly Payment Results -->
             <div class="row row-cols-1 row-cols-md-2 mb-2">                
-                <!-- Loan Info Form Inputs and Submit Button-->
+                <!-- Loan Info Form Inputs -->
                 <div class="col">
                     <form class="row g-2 p-3 formBgc">
                         <label for="loanAmount" class="fw-bold">Loan Amount</label>
@@ -77,12 +77,13 @@
                         <label for="intRate" class="fw-bold">Interest Rate</label>
                         <input id="intRate" name="intRate" type="number" class="form-control" value="2.75">
 
+                        <!-- Calculate Button -->
                         <div class="d-flex justify-content-end">
-                            <button class="btn border-2 formBtn formTxt fw-bold mt-1" type="submit">Calculate</button>
+                            <button id="calculateBtn" class="btn border-2 formBtn formTxt fw-bold mt-1" type="submit">Calculate</button>
                         </div>
                     </form>
                 </div>
-                <!-- Monthly Payments Result, Total Principal/Interest/Cost Info -->
+                <!-- Monthly Payments Result -->
                 <div class="col d-flex flex-column align-items-end">
                     <p><em>Your Monthly Payments</em></p>
                     <p id="monthlyPayments" class="monthlyPayments fw-bold">$269.53</p>
@@ -92,10 +93,11 @@
                             <p class="mb-1">Total Interest:</p>
                             <p class="mb-1">Total Cost:</p>
                         </div>
+                        <!-- Total Principal/Interest/Cost Info -->
                         <div class="col-6 d-flex flex-column align-items-end">
-                            <p class="mb-1">$15,000.00</p>
-                            <p class="mb-1">$1,171.82</p>
-                            <p class="fw-bold mb-1">$16,171.82</p>
+                            <p id="totalPrincipal" class="mb-1">$15,000.00</p>
+                            <p id="totalInterest" class="mb-1">$1,171.82</p>
+                            <p id="totalCost" class="fw-bold mb-1">$16,171.82</p>
                         </div>
                     </div>
                 </div>
@@ -150,6 +152,9 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="js/site.js"></script>
+    <script>
+        document.getElementById("calculateBtn").addEventListener("click", userInputs)
+    </script>
 
 </body>
 

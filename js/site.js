@@ -120,6 +120,7 @@ function calculateMonthlyPayment(loanAmount, monthlyIntRate, totalPayments) {
 }
 
 // Display function
+// Take loanDetails object and inject amortization table into the DOM 
 function displayLoanDetails(loanDetails) {
 
 }

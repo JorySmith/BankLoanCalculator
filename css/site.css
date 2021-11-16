@@ -1,8 +1,9 @@
 :root {
-    --primary-color: #1d5888;
+    --primary-color: #31478d;
     --secondary-color: #ff993b;
     --dark-color: #292929;
     --white-color: #ffffff;
+    --grey-color: #dee2e6;
 }
 
 body {
@@ -84,4 +85,24 @@ pre[class*="language-"] {
 
 .code-title {
     margin-top: 2rem;
+}
+
+.tableHeader {
+    background-color: var(--primary-color);
+}
+
+.formBgc {
+    background-color: var(--grey-color);
+}
+
+.formBtn {
+    border-color: var(--primary-color);
+}
+
+.formTxt {
+    color: var(--primary-color);
+}
+
+.monthlyPayments {
+    font-size: 3rem;
 }

@@ -76,12 +76,12 @@ function calculateMonthlyPayment(parsedLoanAmount, monthlyIntRate, totalPayments
     let resultA = monthlyIntRate * ((1 + monthlyIntRate) ** totalPayments);
     let resultB = (((1 + monthlyIntRate) ** totalPayments) - 1);
     let resultC = (resultA/resultB);
-    totalMonthlyPayment = (parsedLoanAmount * resultC);
+    returnObj.totalMonthlyPayment = (parsedLoanAmount * resultC).toFixed(2);
 
     // Monthly interest payment formula: loan balance * monthlyIntRate
-    monthlyInterestPayment = (parsedLoanAmount * monthlyIntRate);
+    returnObj.monthlyInterestPayment = (parsedLoanAmount * monthlyIntRate).toFixed(2);
     // Monthly principal payment formula: monthly payment - monthly interest payment
-    monthlyPrincipalPayment = (totalMonthlyPayment - monthlyInterestPayment);
+    returnObj.monthlyPrincipalPayment = (returnObj.totalMonthlyPayment - returnObj.monthlyInterestPayment).toFixed(2);
 }
 
 // Display function

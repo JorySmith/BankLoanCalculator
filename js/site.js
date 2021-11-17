@@ -1,5 +1,5 @@
 // Get function
-function userInputs() {
+function getUserInputs() {
     // Get user supplied loan details
     let userLoanAmount = document.getElementById("loanAmount").value;
     let userTotalPayments = document.getElementById("payments").value;

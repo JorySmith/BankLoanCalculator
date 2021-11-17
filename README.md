@@ -1,8 +1,8 @@
 # Bank Loan Calculator - A Coding Project
-A JavaScript program that displays an amortization table for a home loan based on a user-defined loan amount, total payments, and interest rate.
+This program displays an amortization table and monthly payments details for a home loan based on a user-defined total loan amount, number of payments, and annual interest rate.
 
 # Live Demo
 https://jorysmith.github.io/BankLoanCalculator/
 
 # Description
-Description here.
+A JavaScript coding exercise using regular expressions, objects, loops, functions, and conditional statements. 

@@ -44,7 +44,7 @@ function calculateLoanDetails(loanAmount, totalPayments, intRate) {
     
     // Calculate monthly payment, interest, and principal        
     monthlyPaymentDetails = calculateMonthlyPayment(parsedLoanAmount, monthlyIntRate, parsedTotalPayments);
-    loanDetails.theMonthlyPayment = monthlyPaymentDetails.totalMonthlyPayment
+    loanDetails.theMonthlyPayment = monthlyPaymentDetails.totalMonthlyPayment;
 
     // Calculate totalInterest and totalCost
     loanDetails.totalCost = (loanDetails.theMonthlyPayment * parsedTotalPayments).toFixed(2);
@@ -96,7 +96,7 @@ function calculateMonthlyPayment(loanAmount, monthlyIntRate, totalPayments) {
     let parsedTotalPayments = parseFloat(totalPayments);
 
     // Declare return object
-    let returnObj = {}    
+    let returnObj = {};
 
     // Total monthly payment, force result to 2 decimals spaces 
     let resultA = parsedMonthlyIntRate * ((1 + parsedMonthlyIntRate) ** parsedTotalPayments);
@@ -106,6 +106,7 @@ function calculateMonthlyPayment(loanAmount, monthlyIntRate, totalPayments) {
 
     // Monthly interest payment formula: loan balance * monthlyIntRate
     returnObj.monthlyInterestPayment = Math.round(parseFloat((parsedLoanAmount * parsedMonthlyIntRate).toFixed(2)) * 100) / 100;
+
     // Monthly principal payment formula: monthly payment - monthly interest payment
     returnObj.monthlyPrincipalPayment = Math.round(parseFloat((returnObj.totalMonthlyPayment - returnObj.monthlyInterestPayment).toFixed(2)) * 100) / 100;
 
@@ -116,7 +117,8 @@ function addCommasToNumbers(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-// Display data to the DOM function
+// Display function
+// Display loan details and full amortization table in the DOM 
 function displayLoanDetails(loanDetails) {    
     // Add commas in the monthly payment and total principal, interest, and cost numbers if needed via addCommasToNumbers()
     let mPayment = addCommasToNumbers(loanDetails.theMonthlyPayment);

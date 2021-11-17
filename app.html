@@ -69,13 +69,13 @@
                 <div class="col">
                     <form class="row g-2 p-3 formBgc">
                         <label for="loanAmount" class="fw-bold">Loan Amount <span class="fw-normal">(Mortgage Principal)</span></label>
-                        <input id="loanAmount" name="loanAmount" type="number" class="form-control" value="150000">
+                        <input id="loanAmount" name="loanAmount" type="number" class="form-control" value="15000">
 
                         <label for="payments" class="fw-bold">Payments <span class="fw-normal">(Whole numbers only)</span></label>
-                        <input id="payments" name="payments" type="number" class="form-control" value="360">
+                        <input id="payments" name="payments" type="number" class="form-control" value="60">
 
                         <label for="intRate" class="fw-bold">Annual Interest Rate</label>
-                        <input id="intRate" name="intRate" type="number" class="form-control" value="2.75">
+                        <input id="intRate" name="intRate" type="number" class="form-control" value="3">
 
                         <!-- Calculate Button -->
                         <div class="d-flex justify-content-end">
@@ -85,8 +85,8 @@
                     </form>
                 </div>
                 <!-- Monthly Payments Result -->
-                <div class="col d-flex flex-column align-items-end">
-                    <p><em>Your Monthly Payments</em></p>
+                <div class="col mt-3 mt-lg-0 d-flex flex-column align-items-end">
+                    <p class="mb-0"><em>Your Monthly Payments</em></p>
                     <p id="monthlyPayments" class="monthlyPayments fw-bold">$269.53</p>
                     <div class="col-12 d-flex">
                         <div class="col-6 d-flex flex-column align-items-end">
@@ -148,6 +148,19 @@
             </div>
         </div>
     </footer>
+
+    <!-- Create table row template document fragment node to be used by JS -->
+    <template id="monthlyPaymentTemplate">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">

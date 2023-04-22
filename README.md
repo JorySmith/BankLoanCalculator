@@ -3,4 +3,5 @@ A web app using regular expressions, objects, loops, functions, and conditional 
 This program displays an amortization table and monthly payment details for a home loan based on user-defined criteria that includes the total loan amount, number of payments, and annual interest rate.
 
 # Live Demo
-https://jorysmith.github.io/BankLoanCalculator/
+<a href="https://jorysmith.github.io/BankLoanCalculator/" target="_blank">View Demo - Click Here</a>
+
